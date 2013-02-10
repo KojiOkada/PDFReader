@@ -1,0 +1,72 @@
+/* 
+  OparatorExplain.strings
+  PDF
+
+  Created by システム管理者 on 13/01/28.
+
+ ＜参考＞
+ PDFの文章構造を取り出す
+  http://ponpoko1968.hatenablog.com/entry/20100921/1285051921
+ 
+ PDFのテキストの選択について
+ http://oshiete.goo.ne.jp/qa/7764370.html
+ https://github.com/KurtCode/PDFKitten.git
+ 
+ その他
+ http://blog.zuzara.com/2009/01/19/310/
+ http://hmdt.jp/blog/?p=764
+ 
+[ テキスト関連のオペレータ一覧 ]
+
+// Text object
+'BT',    // Begin text object
+'ET',    // End text object
+
+'T*',    // Move to start of next text line
+'Tc',    // Set character spacing
+'Td',    // Move text position
+'TD',    // Move text position and set leading
+'Tf',    // selectfont Set text font and size
+'Tj',    // show Show text
+'TJ',    // Show text, allowing individual glyph positioning
+'TL',    // Set text leading
+'Tm',    // Set text matrix and text line matrix
+'Tr',    // Set text rendering mode
+'Ts',    // Set text rise
+'Tw',    // Set word spacing
+'Tz',    // Set horizontal text scaling
+'''',    // Move to next line and show text
+'"',     // Set word and character spacing, move to next line, and show text
+
+// inline image
+'BI',    // Begin inline image object
+'EI',    // End inline image object
+'ID',    // Begin inline image data
+
+// Graphics State Operators
+'q',     // gsave Save graphics state
+'Q',     // grestore Restore graphics state
+
+6)取得したテキストをお好みの文字コードに変換する
+
+[ 主要な文字コードの一覧 ]
+
+<欧米>
+WinAnsiEncoding
+MacRomanEncoding
+MacExpertEncoding
+StandardEncoding
+<日本語>
+Identity-H     Ext-RKSJ-H
+Identity-V     Ext-RKSJ-V
+83pv-RKSJ-H    EUC-H
+90pv-RKSJ-H    EUC-V
+90ms-RKSJ-H    H
+90ms-RKSJ-V    V
+90msp-RKSJ-H   UniJIS-UCS2-H
+90msp-RKSJ-V   UniJIS-UCS2-V
+Add-RKSJ-H     UniJIS-UCS2-HW-H
+Add-RKSJ-V     UniJIS-UCS2-HW-V
+
+ 
+ */
