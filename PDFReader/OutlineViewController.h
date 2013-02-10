@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol OutlineViewDelegate <NSObject>
+-(void)openPage:(int)index;
+@end
 
 @interface OutlineViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>{
 
 @private
     CGPDFDocumentRef document_;
     NSMutableArray* tableOfContents_;
-    id delegate;
 }
 @property (nonatomic,retain)NSMutableArray *dataSource;
 @property (nonatomic, retain, readonly ) NSArray* tableOfContents;
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, strong) id <OutlineViewDelegate> delegate;
 -(id) initWithCGPDFDocument:(CGPDFDocumentRef) document;
 -(NSArray*) buildStructure;
 @end

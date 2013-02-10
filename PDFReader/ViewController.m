@@ -280,19 +280,15 @@ unichar unicharWithGlyph(CGGlyph glyph){
 #pragma mark -- Action --
 //--------------------------------------------------------------//
 
-- (IBAction)textAction
-{
-    // PDFファイルのパスを取得
-    NSString*   path;
-    path = [[NSBundle mainBundle] pathForResource:DOC_NAME ofType:@"pdf"];
+- (IBAction)textAction{
     
     // PDFドキュメントを作成
     CGPDFDocumentRef    document;
-    document = CGPDFDocumentCreateWithURL((CFURLRef)[NSURL fileURLWithPath:path]);
+    document = _document;
     
     // PDFページを取得
     CGPDFPageRef    page;
-    page = CGPDFDocumentGetPage(document, _index);
+    page = CGPDFDocumentGetPage(_document, _index);
     
     // PDFコンテントストリームを取得
     _stream = CGPDFContentStreamCreateWithPage(page);
@@ -319,7 +315,7 @@ unichar unicharWithGlyph(CGGlyph glyph){
     CGPDFScannerRelease(scanner), scanner = NULL;
     CGPDFOperatorTableRelease(table), table = NULL;
     CGPDFContentStreamRelease(_stream), _stream = NULL;
-    CGPDFDocumentRelease(document), document = NULL;
+    //CGPDFDocumentRelease(document), document = NULL;
     
     // コントローラの作成
     PDFTextViewController*  controller;
@@ -342,6 +338,7 @@ unichar unicharWithGlyph(CGGlyph glyph){
     {
         [libraryPopover dismissPopoverAnimated:NO];
         [libraryPopover release]; libraryPopover = nil;
+        _outline = nil;
         return;
     }
     
@@ -356,13 +353,17 @@ unichar unicharWithGlyph(CGGlyph glyph){
     if(libraryPopover){
         [libraryPopover dismissPopoverAnimated:NO];
         [libraryPopover release]; libraryPopover = nil;
+        _outline = nil;
         return;
     }
     
-    OutlineViewController *outline = [[OutlineViewController alloc]initWithCGPDFDocument:_document];
+    if(!_outline){
+        _outline = [[OutlineViewController alloc]initWithCGPDFDocument:_document];
+    }
     
-    _navigationController = [[UINavigationController alloc]initWithRootViewController:outline];
-    outline.title = @"もくじ";
+    [_outline setDelegate:self];
+    _navigationController = [[UINavigationController alloc]initWithRootViewController:_outline];
+    _outline.title = @"もくじ";
     libraryPopover = [[UIPopoverController alloc] initWithContentViewController:_navigationController];
     libraryPopover.delegate = self;
     [libraryPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
@@ -553,6 +554,38 @@ unichar unicharWithGlyph(CGGlyph glyph){
         return _pdfView1;// 中央のPDF viewを使う
     }
     return nil;
+}
+#pragma mark userMethod
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    if ([popoverController isEqual:libraryPopover])    {
+        [libraryPopover release]; libraryPopover = nil;
+    }
+}
+
+- (void)didSelectDocument:(NSURL *)url{
+	[libraryPopover dismissPopoverAnimated:YES];
+	[libraryPopover release]; libraryPopover = nil;
+	
+	CGPDFDocumentRelease(_document);
+	_document = CGPDFDocumentCreateWithURL((CFURLRef)url);
+    _index = -1;
+     [self _renewPages];
+}
+-(void)openPage:(int)index{
+    _index = index;
+    [self _renewPages];
+}
+
+#pragma mark Search
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar
+{
+	[keyword release];
+	keyword = [[aSearchBar text] retain];
+	[_pdfView1 setKeyword:keyword];
+	
+	[aSearchBar resignFirstResponder];
 }
 
 @end

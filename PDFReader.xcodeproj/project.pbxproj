@@ -27,7 +27,7 @@
 		879C427616C7F4F600B5A11A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879C427516C7F4F600B5A11A /* CoreText.framework */; };
 		879C428316C7F60400B5A11A /* DocumentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427816C7F60300B5A11A /* DocumentsView.m */; };
 		879C428416C7F60400B5A11A /* DocumentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427816C7F60300B5A11A /* DocumentsView.m */; };
-		879C428516C7F60400B5A11A /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427A16C7F60300B5A11A /* OutlineViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		879C428516C7F60400B5A11A /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427A16C7F60300B5A11A /* OutlineViewController.m */; };
 		879C428616C7F60400B5A11A /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427A16C7F60300B5A11A /* OutlineViewController.m */; };
 		879C428916C7F60400B5A11A /* PDFTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427E16C7F60300B5A11A /* PDFTextViewController.m */; };
 		879C428A16C7F60400B5A11A /* PDFTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C427E16C7F60300B5A11A /* PDFTextViewController.m */; };
@@ -246,8 +246,8 @@
 			children = (
 				879C42F516C7FB3700B5A11A /* Common */,
 				879C42F616C7FBA100B5A11A /* SubFunctionView */,
-				879C425116C7BC4500B5A11A /* ViewController.m */,
 				879C425016C7BC4500B5A11A /* ViewController.h */,
+				879C425116C7BC4500B5A11A /* ViewController.m */,
 				879C425316C7BC4500B5A11A /* ViewController.xib */,
 				879C427F16C7F60400B5A11A /* PDFPage.h */,
 				879C428016C7F60400B5A11A /* PDFPage.m */,

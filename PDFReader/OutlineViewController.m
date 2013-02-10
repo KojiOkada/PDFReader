@@ -22,16 +22,9 @@
             document_ = document;
             CFRetain(document_);
             tableOfContents_= [NSMutableArray array];
-            [tableOfContents_ retain];
         }
     }
     return self;
-}
--(void) dealloc {
-    _dataSource = nil;
-    CFRelease( document_ );
-    [tableOfContents_ release];
-    [super dealloc];
 }
 
 - (void)viewDidLoad
@@ -125,7 +118,7 @@
     
     if(CGPDFDictionaryGetString(dict, "Title", &title )){
         
-        NSString* titleString = [(NSString*)CGPDFStringCopyTextString(title) autorelease];
+        NSString* titleString = (__bridge NSString*)CGPDFStringCopyTextString(title);
         
         char indentBuf[BUFSIZ];
         int x;
@@ -296,7 +289,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 	if (!cell)
 	{
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
 	}
 
 	NSDictionary *dic = [_dataSource objectAtIndex:indexPath.row];
@@ -322,6 +315,10 @@
     if([kids count]==0){
        //画面に遷移
         DebugLog(@"%@ %@",[dic objectForKey:@"title"],[dic objectForKey:@"pageNumber"])
+        DebugLog(@"%@",NSStringFromClass([_delegate class]))
+        if([_delegate respondsToSelector:@selector(openPage:)]){
+            [_delegate openPage:[[dic objectForKey:@"pageNumber"]intValue]];
+        }
         
     }else{
         OutlineViewController *viewController = [[OutlineViewController alloc]initWithCGPDFDocument:nil];

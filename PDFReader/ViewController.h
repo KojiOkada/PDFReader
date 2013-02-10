@@ -2,18 +2,19 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
-
+#import "OutlineViewController.h"
 @class PDFPage;
 @class PDFScrollView;
 
-@interface ViewController : UIViewController{
+
+@interface ViewController : UIViewController<UIPopoverControllerDelegate,OutlineViewDelegate>{
     CGPDFDocumentRef        _document;
     int                     _index;
     NSMutableString*        _text;
     CGPDFContentStreamRef   _stream;
     NSString*               _encoding;
     UIPopoverController *libraryPopover;
-    
+    	NSString *keyword;
     
     PDFPage*                _pdfView0;
     PDFPage*                _pdfView1;
@@ -26,6 +27,7 @@
 }
 @property (nonatomic,retain)NSMutableArray *array;
 @property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, retain) OutlineViewController *outline;
 // Image
 - (void)frameToCenter;
 
