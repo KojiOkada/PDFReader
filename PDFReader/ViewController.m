@@ -8,8 +8,7 @@
 #import "OutlineViewController.h"
 
 #define DOC_NAME @"drawingwithquartz2d"
-//#define DOC_NAME @"sample"
-//#define DOC_NAME @"oreilly-978-4-87311-549-8e"
+
 void operator_Text(CGPDFScannerRef scanner, void* info){
     [(ViewController*)info operatorTextScanned:scanner];
 }
@@ -153,7 +152,7 @@ unichar unicharWithGlyph(CGGlyph glyph){
     }
     
     if (_index == oldIndex) {
-        return;
+//        return;
     }
     
     //
@@ -360,14 +359,32 @@ unichar unicharWithGlyph(CGGlyph glyph){
     if(!_outline){
         _outline = [[OutlineViewController alloc]initWithCGPDFDocument:_document];
     }
-    
-    [_outline setDelegate:self];
     _navigationController = [[UINavigationController alloc]initWithRootViewController:_outline];
+    [_outline setDelegate:self];
+
     _outline.title = @"もくじ";
     libraryPopover = [[UIPopoverController alloc] initWithContentViewController:_navigationController];
     libraryPopover.delegate = self;
     [libraryPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     
+}
+-(IBAction)searchButtonDidPush:(id)sender{
+    if(libraryPopover){
+        [libraryPopover dismissPopoverAnimated:NO];
+        [libraryPopover release]; libraryPopover = nil;
+        _outline = nil;
+        return;
+    }
+    
+    if(!_scanView){
+        _scanView = [[ScanViewController alloc]initWithNibName:@"ScanViewController" bundle:nil];
+        _scanView.delegate = self;
+    }
+    
+    [_scanView setPdfDocument:_document];
+    libraryPopover = [[UIPopoverController alloc] initWithContentViewController:_scanView];
+    libraryPopover.delegate = self;
+    [libraryPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 }
 - (NSString*)stringInPDFObject:(CGPDFObjectRef)object
 {
@@ -584,7 +601,13 @@ unichar unicharWithGlyph(CGGlyph glyph){
 	[keyword release];
 	keyword = [[aSearchBar text] retain];
 	[_pdfView1 setKeyword:keyword];
-	
+
+//        for (PDFPage *p in visiblePages)
+//        {
+//            p.keyword = keyword;
+//            [p setNeedsDisplay];
+//        }
+    
 	[aSearchBar resignFirstResponder];
 }
 

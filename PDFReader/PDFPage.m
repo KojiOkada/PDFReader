@@ -68,6 +68,7 @@
     
     // 画面の更新
     [self setNeedsDisplay];
+	self.scanner = [Scanner scannerWithPage:_page];
 }
 
 //--------------------------------------------------------------//
@@ -96,6 +97,7 @@
     // グラフィックコンテキストの復元
 	CGContextRestoreGState(context);
 }
+
 
 @end
 

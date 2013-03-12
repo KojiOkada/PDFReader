@@ -3,11 +3,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 #import "OutlineViewController.h"
+#import "ScanViewController.h"
 @class PDFPage;
 @class PDFScrollView;
 
 
-@interface ViewController : UIViewController<UIPopoverControllerDelegate,OutlineViewDelegate>{
+@interface ViewController : UIViewController<UIPopoverControllerDelegate,OutlineViewDelegate,ScanViewDelegate>{
     CGPDFDocumentRef        _document;
     int                     _index;
     NSMutableString*        _text;
@@ -28,6 +29,7 @@
 @property (nonatomic,retain)NSMutableArray *array;
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) OutlineViewController *outline;
+@property (nonatomic, retain) ScanViewController *scanView;
 // Image
 - (void)frameToCenter;
 

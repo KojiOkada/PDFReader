@@ -323,6 +323,7 @@
     }else{
         OutlineViewController *viewController = [[OutlineViewController alloc]initWithCGPDFDocument:nil];
         viewController.dataSource = [[NSMutableArray alloc]initWithArray:kids];
+        viewController.delegate = _delegate;
         viewController.title = title;
         [self.navigationController pushViewController:viewController animated:YES];
         [viewController.tableView reloadData];

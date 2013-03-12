@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113D4B2016EF10BB0078CF3D /* pageScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D4B1F16EF10BB0078CF3D /* pageScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		11AF2DF416EDB79200B93891 /* XMInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AF2DF316EDB79200B93891 /* XMInfo.m */; };
+		11AF2DF916EDB83200B93891 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AF2DF716EDB83100B93891 /* ScanViewController.m */; };
+		11AF2DFA16EDB83200B93891 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AF2DF816EDB83100B93891 /* ScanViewController.xib */; };
 		879C423916C7BC4500B5A11A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879C423816C7BC4500B5A11A /* UIKit.framework */; };
 		879C423B16C7BC4500B5A11A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879C423A16C7BC4500B5A11A /* Foundation.framework */; };
 		879C423D16C7BC4500B5A11A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879C423C16C7BC4500B5A11A /* CoreGraphics.framework */; };
@@ -100,6 +104,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113D4B1E16EF10BB0078CF3D /* pageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pageScanner.h; sourceTree = "<group>"; };
+		113D4B1F16EF10BB0078CF3D /* pageScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pageScanner.m; sourceTree = "<group>"; };
+		11AF2DF216EDB79200B93891 /* XMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMInfo.h; sourceTree = "<group>"; };
+		11AF2DF316EDB79200B93891 /* XMInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMInfo.m; sourceTree = "<group>"; };
+		11AF2DF616EDB83100B93891 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		11AF2DF716EDB83100B93891 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		11AF2DF816EDB83100B93891 /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
 		879C423416C7BC4500B5A11A /* PDFReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879C423816C7BC4500B5A11A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		879C423A16C7BC4500B5A11A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -253,6 +264,9 @@
 				879C428016C7F60400B5A11A /* PDFPage.m */,
 				879C428116C7F60400B5A11A /* PDFScrollView.h */,
 				879C428216C7F60400B5A11A /* PDFScrollView.m */,
+				11AF2DF616EDB83100B93891 /* ScanViewController.h */,
+				11AF2DF716EDB83100B93891 /* ScanViewController.m */,
+				11AF2DF816EDB83100B93891 /* ScanViewController.xib */,
 				879C42B016C7F8C000B5A11A /* Scanner */,
 				879C423F16C7BC4500B5A11A /* Supporting Files */,
 			);
@@ -366,6 +380,8 @@
 			children = (
 				879C424716C7BC4500B5A11A /* AppDelegate.h */,
 				879C424816C7BC4500B5A11A /* AppDelegate.m */,
+				11AF2DF216EDB79200B93891 /* XMInfo.h */,
+				11AF2DF316EDB79200B93891 /* XMInfo.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -380,6 +396,8 @@
 				879C427D16C7F60300B5A11A /* PDFTextViewController.h */,
 				879C427E16C7F60300B5A11A /* PDFTextViewController.m */,
 				879C42EF16C7FA1600B5A11A /* TextView.xib */,
+				113D4B1E16EF10BB0078CF3D /* pageScanner.h */,
+				113D4B1F16EF10BB0078CF3D /* pageScanner.m */,
 			);
 			name = SubFunctionView;
 			sourceTree = "<group>";
@@ -465,6 +483,7 @@
 				879C429616C7F75200B5A11A /* sample.pdf in Resources */,
 				879C42F016C7FA1600B5A11A /* TextView.xib in Resources */,
 				879C42F316C7FA1D00B5A11A /* OparatorExplain.strings in Resources */,
+				11AF2DFA16EDB83200B93891 /* ScanViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +552,9 @@
 				879C42E816C7F96400B5A11A /* CIDFont.m in Sources */,
 				879C42EA16C7F96400B5A11A /* CIDType0Font.m in Sources */,
 				879C42EC16C7F96400B5A11A /* CIDType2Font.m in Sources */,
+				11AF2DF416EDB79200B93891 /* XMInfo.m in Sources */,
+				11AF2DF916EDB83200B93891 /* ScanViewController.m in Sources */,
+				113D4B2016EF10BB0078CF3D /* pageScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +757,7 @@
 				879C426F16C7BC4500B5A11A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		879C427016C7BC4500B5A11A /* Build configuration list for PBXNativeTarget "PDFReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -743,6 +766,7 @@
 				879C427216C7BC4500B5A11A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
