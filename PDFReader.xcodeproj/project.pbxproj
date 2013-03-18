@@ -39,8 +39,6 @@
 		879C428C16C7F60400B5A11A /* PDFPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C428016C7F60400B5A11A /* PDFPage.m */; };
 		879C428D16C7F60400B5A11A /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C428216C7F60400B5A11A /* PDFScrollView.m */; };
 		879C428E16C7F60400B5A11A /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879C428216C7F60400B5A11A /* PDFScrollView.m */; };
-		879C429016C7F74100B5A11A /* drawingwithquartz2d.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879C428F16C7F74100B5A11A /* drawingwithquartz2d.pdf */; };
-		879C429116C7F74100B5A11A /* drawingwithquartz2d.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879C428F16C7F74100B5A11A /* drawingwithquartz2d.pdf */; };
 		879C429316C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879C429216C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf */; };
 		879C429416C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879C429216C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf */; };
 		879C429616C7F75200B5A11A /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879C429516C7F75200B5A11A /* sample.pdf */; };
@@ -145,7 +143,6 @@
 		879C428016C7F60400B5A11A /* PDFPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFPage.m; sourceTree = "<group>"; };
 		879C428116C7F60400B5A11A /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
 		879C428216C7F60400B5A11A /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
-		879C428F16C7F74100B5A11A /* drawingwithquartz2d.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = drawingwithquartz2d.pdf; sourceTree = "<group>"; };
 		879C429216C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "oreilly-978-4-87311-549-8e.pdf"; sourceTree = "<group>"; };
 		879C429516C7F75200B5A11A /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		879C429816C7F8A700B5A11A /* RenderingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingState.h; sourceTree = "<group>"; };
@@ -279,7 +276,6 @@
 				879C42F216C7FA1D00B5A11A /* OparatorExplain.strings */,
 				879C429516C7F75200B5A11A /* sample.pdf */,
 				879C429216C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf */,
-				879C428F16C7F74100B5A11A /* drawingwithquartz2d.pdf */,
 				879C424016C7BC4500B5A11A /* PDFReader-Info.plist */,
 				879C424116C7BC4500B5A11A /* InfoPlist.strings */,
 				879C424416C7BC4500B5A11A /* main.m */,
@@ -478,7 +474,6 @@
 				879C424D16C7BC4500B5A11A /* Default@2x.png in Resources */,
 				879C424F16C7BC4500B5A11A /* Default-568h@2x.png in Resources */,
 				879C425516C7BC4500B5A11A /* ViewController.xib in Resources */,
-				879C429016C7F74100B5A11A /* drawingwithquartz2d.pdf in Resources */,
 				879C429316C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf in Resources */,
 				879C429616C7F75200B5A11A /* sample.pdf in Resources */,
 				879C42F016C7FA1600B5A11A /* TextView.xib in Resources */,
@@ -492,7 +487,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				879C426716C7BC4500B5A11A /* InfoPlist.strings in Resources */,
-				879C429116C7F74100B5A11A /* drawingwithquartz2d.pdf in Resources */,
 				879C429416C7F74800B5A11A /* oreilly-978-4-87311-549-8e.pdf in Resources */,
 				879C429716C7F75200B5A11A /* sample.pdf in Resources */,
 				879C42F116C7FA1600B5A11A /* TextView.xib in Resources */,

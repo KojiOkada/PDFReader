@@ -57,6 +57,9 @@
     if(![_text isKindOfClass:[NSMutableString class]]){
         return;
     }
+    BOOL bl = [_text hasPrefix:_keyword];
+
+    DebugLog(@"%@ %@ %@",_keyword,_text,_encoding)
     if([_text length]> [_keyword length]){
         NSRange range = [_text rangeOfString:_keyword];
         if (range.location == NSNotFound) {
@@ -236,6 +239,7 @@
     // エンコーディングの設定
     [_encoding release], _encoding = nil;
     _encoding = [[NSString stringWithCString:encoding encoding:NSASCIIStringEncoding] retain];
+//    DebugLog(@"%@",_encoding)
 }
 
 @end

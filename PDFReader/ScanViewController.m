@@ -69,6 +69,7 @@
     }
     
     [_dataSource removeAllObjects];
+    [_tableView reloadData];
     queue = [NSOperationQueue mainQueue];
     
     for(int i = 1;i < _numberOfPage -1;i++){
